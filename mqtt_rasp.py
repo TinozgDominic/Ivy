@@ -8,7 +8,7 @@ class MQTT():
         self.broker = "test.mosquitto.org"
         self.topic  = "ivy/cam_pi"
 
-        self.camera = cv2.VideoCapture(2)
+        self.camera = cv2.VideoCapture(0)
 
         self.client = mqtt.Client()
         self.client.connect(self.broker, 1883)
