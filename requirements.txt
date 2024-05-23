@@ -1,0 +1,24 @@
+setuptools
+ultralytics
+torch
+torchvision
+paho-mqtt==1.6.1
+SpeechRecognition
+openai
+pydub
+
+nltk
+faster-whisper
+sounddevice
+# face-recognition
+dataset
+soundfile
+audiostretchy
+diffusers
+sentencepiece
+
+gradio_imageslider
+gradio==4.14.0
+
+opencv-python
+transformer

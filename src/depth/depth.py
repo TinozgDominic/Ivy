@@ -44,12 +44,12 @@ class Depth():
             depth = (depth - depth.min()) / (depth.max() - depth.min()) * 255.0
             depth = depth.cpu().numpy().astype(np.uint8)
             depth_color = cv2.applyColorMap(depth, cv2.COLORMAP_INFERNO)
-            
+            # print(depth.max(), depth.min())
             return depth_color
 
 if __name__ == "__main__":
     depth = Depth()
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(2)
 
     while cap.isOpened():
         ret, raw_image = cap.read()
@@ -58,7 +58,8 @@ if __name__ == "__main__":
             break
 
         res = depth.get_depth(raw_image)
-        cv2.imshow("out", res)
+        # cv2.imshow("out", res)
+        cv2.imwrite("out.jpg", res)
 
         # Press q on keyboard to exit
         if cv2.waitKey(1) & 0xFF == ord('q'):
